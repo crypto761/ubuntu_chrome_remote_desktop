@@ -1,21 +1,20 @@
 # This is a basic workflow to help you get started with Actions
 
 name: CI
-le: 
+on: 
   workflow_dispatch:
-    entrées:
+    inputs:
       authcode:
-        description:  'Entrez le code Google Remote Desktop (Windows PowerShell)' 
-        obligatoire: true
-      nom_ordinateur:
-        description:  'Nom de l’ordinateur' 
-        valeur par défaut:  'ZVM' 
-        obligatoire: true
-      code pin:
-        description:  ' Épingleà sixchiffres ' 
-        valeur par défaut:  '123456' 
-        obligatoire: true
-
+        description: 'Enter Google Remote Desktop (Windows PowerShell) code'
+        required: true
+      computername:
+        description: 'Computer Name'
+        default: 'ZVM'
+        required: true
+      pincode:
+        description: 'Six digit Pin'
+        default: '123456'
+        required: true
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
